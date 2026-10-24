@@ -54,3 +54,14 @@
 - 분리: quad-electrical-wall-outlet → quad-electrical-wall-outlet-1, quad-electrical-wall-outlet-2 (2개; front:2덩어리, rightSide:1덩어리, top:2덩어리)
 - 좌우 반전 생성: 293개 에셋
 - 정리: 참조되지 않는 SVG 91개 삭제(사용하지 않은 중복 뷰, 이전 채움 파일)
+
+## 4차(요청 반영) 카탈로그 직접 수정
+- '미분류(검토 필요)' 카테고리 삭제(소속 에셋 0개 확인).
+- tent-camping → '텐트', water-buckets-1/2/3 → '양동이 1/2/3'.
+- wood-whiskey-barrel-1(파일명 "(1)" 복사본) 삭제. 같은 그림의 wood-whiskey-barrel 만 남김.
+- grand-spiral-staircase, staircase-glass-railing 에 `stairAsset`(spiral/glass) 표시 → 편집기가 가구 탭에서 빼고 건물 탭 계단에서 사용.
+- 코너 L Shaped Computer 책상: DWG 를 다시 추출해 이전 결과와 바이트 단위로 같음을 확인. A-01=front, A-02=side, top 은 편집기에 쓰이지 않음.
+- 주의: tools/build_library.py 를 처음부터 다시 돌리면 위 수정은 다시 적용해야 함(카탈로그 직접 편집).
+
+## 6차
+카탈로그: 미분류 제거, 텐트/양동이 1~3 이름 변경, 위스키 배럴 중복 제거, 계단 에셋 2종 stairAsset 표시, 썸네일 494개 생성. 코너 L Shaped Computer 책상 DWG 재추출 결과 기존과 동일(a1=front, a2=side, top 미사용).

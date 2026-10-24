@@ -49,3 +49,16 @@ dialog{border:1px solid var(--ink);border-radius:2px;background:var(--paper);col
 .li{display:flex;justify-content:space-between;align-items:center;padding:3px 4px;border-bottom:1px dotted var(--rule);cursor:pointer;font-size:13px}.li.on{background:var(--paper2);font-weight:700}
 .two{display:flex;gap:4px}#tHouse label.sub .two input{width:62px}#layList label.chk{margin:3px 0}
 @media(max-width:900px){main{grid-template-columns:1fr;grid-template-rows:200px 1fr 170px}aside{border:0;border-bottom:1px solid var(--rule)}}
+
+/* 6차: 패널 접기, 버튼, 드래그 성능 */
+main{transition:grid-template-columns .18s ease}
+main.hideL{grid-template-columns:0 1fr 252px}main.hideR{grid-template-columns:292px 1fr 0}main.hideL.hideR{grid-template-columns:0 1fr 0}
+main.hideL #lib,main.hideR #insp{padding:0;border:0;overflow:hidden;visibility:hidden}
+.tg{position:absolute;top:46%;z-index:5;width:20px;height:54px;padding:0;border:1px solid var(--ink);background:var(--paper);font-size:11px;line-height:1}
+.tgL{left:0;border-left:0;border-radius:0 4px 4px 0}.tgR{right:0;border-right:0;border-radius:4px 0 0 4px}
+button.wide{width:100%;margin:6px 0}button.wide.on{background:var(--ink);color:#fff}
+#msg{font-weight:600;color:#7a2a12}
+.tile{content-visibility:auto;contain-intrinsic-size:110px 120px}
+.tile img{width:100%;height:72px;object-fit:contain}
+#svg.drag [filter]{filter:none!important}
+

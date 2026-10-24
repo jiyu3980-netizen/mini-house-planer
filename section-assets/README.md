@@ -32,3 +32,18 @@ section-assets/
 
 ## 4차 수정 — 실루엣 다듬기
 `tools/make_fills.py` 를 고쳐 `*.fill.svg` 가 (1) 부드럽게 다듬은 흰 채움 경로, (2) 바깥 윤곽만 담은 `<path class="o">` 를 함께 담습니다. 원본 선 SVG(`front.svg` 등)와 DWG 는 건드리지 않았습니다.
+
+## 6차 (카탈로그)
+미분류 분류 삭제, 이름 변경(텐트·양동이 1~3), 위스키 배럴 중복 삭제, thumbs 폴더 추가. 원본 DWG는 수정하지 않았습니다.
+
+## 7차 변경
+- 신규 DWG 추가(동일 파일명은 제외), 소프트 시팅·peeps 분리 등록, 벽난로4 삭제, 상업용 식기세척기 front 불필요 선 삭제, 바이올린·체스판 재생성.
+- 면 채움 규칙 `catalog/fill_rules.json`: exclude(채우지 않을 면) / include(채울 곳) / fine(잔 요철 보존). 자세한 내용은 logs/r7-changes.md.
+- 모든 svg 경로를 `assets/svg/<assetId>/<파일>` 로 통일(대소문자 구분 저장소 대응).
+
+## 새 에셋 추가 (전체 재변환 없이)
+1. `assets/svg/<소문자-id>/` 에 `front.svg` / `rightSide.svg` / `leftSide.svg` 를 넣는다.
+2. `python3 tools/add_asset.py <id> "<한글이름>" <categoryId> --width-cm 120 --height-cm 80 [--depth-cm 50]` — 카탈로그에 항목만 추가하고 그 에셋의 면 채움·썸네일만 생성.
+3. `python3 tools/validate_assets.py` — 중복 ID, 누락 파일, 경로 규칙, 미등록 폴더, 썸네일 누락, 큰 SVG 경고(읽기 전용).
+기존 에셋·ID·경로는 수정하지 않습니다. 사이트 코드(section-site) 수정 불필요.
+- 8차: 정면·측면 없는 에셋 11개 삭제, 신규 DWG 135개 에셋 등록, 세면대 1·2 측면 추가 (logs/r7-changes.md 참고).

@@ -332,17 +332,6 @@
      "nameKo": "전화기·음향기기"
     }
    ]
-  },
-  {
-   "id": "unclassified",
-   "nameKo": "미분류(검토 필요)",
-   "nameEn": "Unclassified",
-   "subcategories": [
-    {
-     "id": "needs-review",
-     "nameKo": "검토 필요"
-    }
-   ]
   }
  ]
 }
